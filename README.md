@@ -35,19 +35,16 @@ pip install opencv-python opencv-contrib-python numpy
 
 The training script reads images from `FaceRecognitionImages/` (organized in subfolders named after each person), detects faces using Haar Cascade, and trains an LBPH recognizer.
 
-**Note:** Before running, update the hardcoded path in `face_training.py`:
-```python
-DIR = r'D:\SKILLS\OPENCV\IMAGES_TUTS\FaceRecognitionImages'
-```
-Change it to point to the `FaceRecognitionImages` folder in this project.
+**Note:** Update the hardcoded paths in `face_training.py` with your own paths:
 
-Also update the Haar Cascade XML path:
 ```python
-haar_cascade = cv.CascadeClassifier('IMAGES_TUTS\\FaceDetection\\haar_face_def.xml')
-```
-You can use OpenCV's built-in Haar Cascade instead:
-```python
-haar_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
+# Path to the FaceRecognitionImages folder on your machine
+DIR = r'YOUR_PATH\FaceRecognitionUsingOPENCV\FaceRecognitionImages'
+
+# Path to Haar Cascade XML (or use OpenCV's built-in one)
+haar_cascade = cv.CascadeClassifier('YOUR_PATH\\haarcascade_frontalface_default.xml')
+# Alternative — use OpenCV's built-in cascade:
+# haar_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
 ```
 
 Then run:
@@ -61,9 +58,10 @@ This will generate `face_trainedmodel.yml`, `features.npy`, and `labels.npy`.
 
 The recognizer script loads the trained model and predicts faces in a test image.
 
-Update the test image path in `Face_recognizer.py`:
+Update the test image path in `Face_recognizer.py` with your own path:
+
 ```python
-img = cv.imread(r"C:\Users\HP\Downloads\TestImage9.jpg")
+img = cv.imread(r"YOUR_PATH\TestImage.jpg")
 ```
 
 Then run:
