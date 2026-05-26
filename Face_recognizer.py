@@ -1,9 +1,10 @@
 import cv2 as cv
 import numpy as np
 
+# simple clasiifirer
+
 haar_cascade = cv.CascadeClassifier("IMAGES_TUTS\\FaceDetection\\haar_face_def.xml")
 people = ['ViratKohli','RohitSharma','Dhoni']
-
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.read("face_trainedmodel.yml")
